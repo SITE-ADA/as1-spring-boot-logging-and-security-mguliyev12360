@@ -92,3 +92,6 @@ nagivate through you web site. You may pick one of the entities from the previou
 This assignment will give you <strong>10%</strong> of the total. <br />
 <em> Good luck! </em> <br />
 <em> NS </em>
+
+I explained all steps in the video. Let's mention important parts here. We should run the spring boot app. Then, search localhost:8080 in google. We will see login page. Now, we can login or sign up. If we are a user we can only see the list of users. If we are admin, we can also modify the data. 
+Link: https://adauniversity-my.sharepoint.com/:v:/g/personal/mguliyev12360_ada_edu_az/EcZCm3nGbIpEg6_K8K2QO74BPW1TDNsq1O2lq2qTAaTxFQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=0Tt6Nl
