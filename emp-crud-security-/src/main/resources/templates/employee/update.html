@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Update Employee</title>
+</head>
+<body class="update-body">
+<h2>Update The Employee</h2>
+<hr>
+<div>
+    <form action="#" th:action="@{update}" th:object="${employee}" method="POST">
+        <div th:if="${#fields.hasAnyErrors()}" class="alert alert-info">
+            <p>Please correct the errors below</p>
+        </div>
+
+        <div class="mb-3">
+            <label for="id" class="form-label">ID:</label>
+            <input type="text" th:field="*{id}" class="form-control" readonly/> <br/>
+            <p th:if="${#fields.hasErrors('id')}" th:errors="*{id}" class="alert alert-danger"></p>
+        </div>
+
+        <div class="mb-3">
+            <label for="firstName" class="form-label">First Name:</label>
+            <input type="text" th:field="*{firstName}" class="form-control" placeholder="Enter first name"/> <br/>
+            <p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="alert alert-danger"></p>
+        </div>
+
+        <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name:</label>
+            <input type="text" th:field="*{lastName}" class="form-control" placeholder="Enter last name"/> <br/>
+            <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="alert alert-danger"></p>
+        </div>
+
+        <div class="mb-3">
+            <label for="salary" class="form-label">Salary:</label>
+            <input type="number" th:field="*{salary}" class="form-control" placeholder="Enter salary"/> <br/>
+            <p th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}" class="alert alert-danger"></p>
+        </div>
+
+        <input type="submit" value="Update Employee" class="btn btn-primary"/>
+    </form>
+</div>
+<hr>
+<a href="#" onclick="history.go(-1)">Back to the Employee List</a>
+<a th:href="@{'/logout'}">Logout Here</a>
+</body>
+</html>

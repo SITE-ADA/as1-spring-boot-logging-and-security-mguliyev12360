@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Employees</title>
+</head>
+<body>
+<table border="1px">
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Salary</th>
+        <th>Actions</th>
+    </tr>
+
+    <p th:if="${employees} != null" th:text="|Number of Available Employees: ${#lists.size(employees)}|"></p>
+
+    <tr th:if="${#lists.isEmpty(employees)}">
+        <td colspan="5">The Employee list is empty</td>
+    </tr>
+    <tr th:each="employee : ${employees}">
+        <td th:text="${employee.id}"></td>
+        <td th:text="${employee.firstName}"></td>
+        <td th:text="${employee.lastName}"></td>
+        <td th:text="${employee.salary}"></td>
+        <td>
+            <th:block th:with="id=${employee.id}">
+                <a th:href="@{'employees/new'}">Create</a>
+                <a th:href="@{'employees/' + ${id} + '/update'}">Update</a>
+                <a th:href="@{'employees/' + ${id} + '/delete'}">Delete</a>
+            </th:block>
+        </td>
+    </tr>
+
+
+    <!--    <tr th:each="employee : ${employees}">-->
+    <!--        <td th:text="${employee.id}"></td>-->
+    <!--        <td th:text="${employee.firstName}"></td>-->
+    <!--        <td th:text="${employee.lastName}"></td>-->
+    <!--        <td th:text="${employee.salary}"></td>-->
+    <!--        <td>-->
+    <!--            <a th:href="@{'/employees/new'}">Create</a>-->
+    <!--            <a th:href="@{'/employees/update/' + ${employee.id}}">Update</a>-->
+    <!--            <a th:href="@{'/employees/delete/' + ${employee.id}}" onclick="return confirm('Are you sure?');">Delete</a>-->
+    <!--        </td>-->
+    <!--    </tr>-->
+</table>
+<a href="#" onclick="history.go(-1)">Back to The Home Page</a>
+<a th:href="@{'/logout'}">Logout Here</a>
+</body>
+</html>
