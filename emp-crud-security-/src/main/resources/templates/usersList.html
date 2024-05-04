@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Users</title>
+</head>
+<body>
+<h2>Number of Available Users: <span th:text="${#lists.size(users)}">0</span></h2>
+<table border="1px">
+    <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Roles</th>
+    </tr>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.roles}"></td>
+    </tr>
+</table>
+<a href="#" onclick="history.go(-1)">Back to The Home Page</a>
+<a th:href="@{/logout}">Logout Here</a>
+</body>
+</html>
